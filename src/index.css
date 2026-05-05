@@ -1,1 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 @import "tailwindcss";
+
+@theme {
+    --font-poppins: "Poppins", sans-serif;
+
+    --animate-fadein: fadeIn 0.5s ease-out;
+    --animate-pushup: pushUp 0.5s ease-out;
+    
+    @keyframes fadeIn {
+        0%{
+            opacity: 0;
+        },
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes pushUp {
+        0%{
+            transform: translateY(-60px);
+            opacity: 0;
+        },
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}

@@ -1,14 +1,16 @@
 import { useNavigate } from "react-router-dom";
-
+import Button from "../../components/Button";
 export default function HomePage() {
     const navigate = useNavigate();
     return (
-        <div className="h-screen flex flex-col items-center justify-center bg-gray-900 text-white">
-            <h1>Math Battle</h1>
-            <button onClick={() => navigate("/lobby")}>Enter lobby</button>
-            <h1 className="text-3xl font-bold underline">
-                Hello world!
-            </h1>
+        <div className=" bg-[#031516]">
+            <div style={{ backgroundImage: "url('/src/assets/background.jpg')" }} className="animate-fadein h-screen bg-no-repeat bg-cover bg-center flex flex-col justify-between gap-10 items-center justify-center text-white">
+                <h1 className="font-poppins text-8xl font-semibold text-shadow-lg transition-transform animate-pushup">Multiply Battle!</h1>
+                <h1 className="text-3xl font-regular transition-transform animate-pushup">
+                    Battle with others to see who is the best at multiple!
+                </h1>
+                <Button onClick={() => navigate("/lobby")}>Enter lobby</Button>
+            </div>
         </div>
     );
 }
