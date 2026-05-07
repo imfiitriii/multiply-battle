@@ -3,6 +3,7 @@ import Background from "../../components/Background";
 import Button from "../../components/Button";
 import Container from "../../components/Container";
 import { useNavigate } from "react-router-dom";
+import Loader from "../../components/Loader";
 export default function LobbyPage() {
     const navigate = useNavigate()
     const [matchmakingStats, setMatchMakingStats] = useState(false)
@@ -22,6 +23,7 @@ export default function LobbyPage() {
                 {matchmakingStats ? <Container>
                     <div className="flex flex-col justify-center items-center gap-10">
                         <h1 className="text-6xl font-semibold">Finding player...</h1>
+                        <Loader></Loader>
                         <h1 className="text-4xl font-semibold">Player Found!</h1>
                         <Button onClick={() => navigate("/game/:roomId")}><h1 className="text-2xl pointer-events-none">Enter battle</h1></Button>
                     </div>
