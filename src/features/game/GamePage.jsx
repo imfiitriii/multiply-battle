@@ -11,17 +11,17 @@ export default function GamePage() {
             <div className="flex flex-col justify-center items-center gap-10">
                 
                 <QuestionCard questionNum={1} num1={1} num2={2}></QuestionCard>
-                <h1 className="text-4xl font-semibold -mb-10">Your answer : {answer}</h1>
+                <h1 className="text-2xl font-semibold font-poppins -mb-10">Your answer : {answer}</h1>
                 <div className="grid grid-cols-3 gap-4 -mb-6 mt-10">
                     {numbers.map((num) => (
-                        <Button onClick={() => setAnswer(answer + num.toString())} key={num}><h1 className="text-4xl p-3 font-bold">{num}</h1></Button>
+                        <Button onClick={() => setAnswer((prev) => prev + num.toString())} key={num}><span className="text-2xl text-center pl-2 pr-3 pt-2 pb-2 font-bold">{num}</span></Button>
                     ))}
                 </div>
                 {/* 0 button */}
-                <div className="flex flex-rpw justify-center items-center gap-5">
-                    <Button onClick={() => answer + "0"} key={0}><h1 className="text-4xl p-3 font-bold">{0}</h1></Button>
-                    <Button onClick={() => setAnswer(answer.slice(0,-1))}><h1 className="text- 3xl p-3 font-bold">Del</h1></Button>
-                    <Button onClick={() => console.log(parseInt(answer))}><h1 className="text-3xl p-3 font-bold">Submit</h1></Button>
+                <div className="flex flex-r0w justify-center items-center gap-2">
+                    <Button onClick={() => setAnswer((prev) => prev + "0")} key={0}><span className="inline-block text-2xl text-center p-3 font-bold">{0}</span></Button>
+                    <Button onClick={() => setAnswer((prev) => prev.slice(0, -1))}><span className="text-1xl p-3 font-bold">Del</span></Button>
+                    <Button onClick={() => console.log(parseInt(answer))}><span className="text-1xl p-3 font-bold">Submit</span></Button>
                 </div>
             </div>
         </Background >

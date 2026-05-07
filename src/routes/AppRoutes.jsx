@@ -4,12 +4,14 @@ import LoginPage from "../features/auth/login/LoginPage";
 import LobbyPage from "../features/lobby/LobbyPage";
 import GamePage from "../features/game/GamePage";
 import LeaderboardPage from "../features/leaderboard/LeaderboardPage";
+import RegisterPage from "../features/auth/register/RegisterPage";
 
 export default function AppRoutes() {
     return (
         <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
             <Route path="/lobby" element={<LobbyPage />} />
             <Route path="/game/:roomId" element={<GamePage />} />
             <Route path="/leaderboard" element={<LeaderboardPage />} />
