@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
 export default function LoginForm() {
+    const navigate = useNavigate()
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     return (
         <form className="overflow-visible flex flex-col gap-5 p-10 font-poppins rounded-[20px] relative bg-black text-white border border-[#14FFEC]">
 
@@ -116,7 +120,7 @@ export default function LoginForm() {
             <p className="text-center text-[14.5px] text-white/70">
                 Don't have an account?{" "}
                 <a
-                    href="#"
+                    href="/register"
                     className="text-[#14FFEC] hover:underline"
                 >
                     Register

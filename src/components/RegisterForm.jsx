@@ -1,6 +1,10 @@
+import { useState } from "react";
 import Button from "./Button";
 
 export default function RegisterForm() {
+    const [name,setName] = useState("")
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     return (
         <form className="overflow-visible flex flex-col gap-5 p-10 font-poppins rounded-[20px] relative bg-black text-white border border-[#14FFEC]">
 
@@ -201,10 +205,10 @@ export default function RegisterForm() {
             <p className="text-center text-[14.5px] text-white/70">
                 ALready have an account?{" "}
                 <a
-                    href="#"
+                    href="/login"
                     className="text-[#14FFEC] hover:underline"
                 >
-                    Log in.
+                    Log in
                 </a>
             </p>
 
