@@ -17,7 +17,10 @@ export default function LobbyPage() {
                         <h1 className="text-1xl font-normal">2. When a game starts, a random multiple question from multiple 2 to 12 will appear.</h1>
                         <h1 className="text-1xl font-normal">3. Whoever answer first obtain points.</h1>
                         <h1 className="text-1xl font-normal">4. Whoever got 10 points first wins.</h1>
-                        <Button onClick={() => setMatchMakingStats(!matchmakingStats)}><h1 className="text-2xl">{matchmakingStats ? "Cancel" : "Start matchmaking"}</h1></Button>
+                        <div className="flex flex-row justify-center items-center gap-10">
+                            <Button onClick={() => setMatchMakingStats(!matchmakingStats)}><span className="text-2xl">{matchmakingStats ? "Cancel" : "Start matchmaking"}</span></Button>
+                            Username : {"username"}
+                        </div>
                     </div>
                 </Container>
                 {matchmakingStats ? <Container>
