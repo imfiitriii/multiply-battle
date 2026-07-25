@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
+import { useDispatch, useSelector } from "react-redux";
+import {loginStart, loginSuccess, loginError} from "../features/auth/authSlice";
 
 export default function LoginForm() {
     const navigate = useNavigate()
-    const [email, setEmail] = useState("");
+    const [email, setEmail] = useState(useSelector());
     const [password, setPassword] = useState("");
     return (
         <form className="overflow-visible flex flex-col gap-5 p-10 font-poppins rounded-[20px] relative bg-black text-white border border-[#14FFEC]">
