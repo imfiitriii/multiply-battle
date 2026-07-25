@@ -18,6 +18,10 @@ export default function LobbyPage() {
         navigate("/login")
     }
 
+    const checkUserLoggedIn = () => {
+
+    }
+
     return (
         <Background>
             <div className="flex flex-row font-poppins justify-center items-center gap-7">
@@ -29,7 +33,7 @@ export default function LobbyPage() {
                         <h1 className="text-1xl font-normal">3. Whoever answer first obtain points.</h1>
                         <h1 className="text-1xl font-normal">4. Whoever got 10 points first wins.</h1>
                         <div className="flex flex-row justify-center items-center gap-10">
-                            <Button onClick={() => setMatchMakingStats(!matchmakingStats)}><span className="text-2xl">{matchmakingStats ? "Cancel" : "Start matchmaking"}</span></Button>
+                            <Button onClick={() => {isAuthenticated ? setMatchMakingStats(!matchmakingStats) : navigate("/login")}}><span className="text-2xl">{matchmakingStats ? "Cancel" : "Start matchmaking"}</span></Button>
                             Username : {user?.username ?? "Guest"}
                         </div>
                         {isAuthenticated && (
